@@ -1,0 +1,12 @@
+.bodyApp {
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  gap: 50px;
+
+  & .header {
+    grid-column: span 12;
+    color: orange;
+    font-size: 50px;
+    text-align: center;
+  }
+}
