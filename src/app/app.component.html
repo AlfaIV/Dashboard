@@ -2,7 +2,7 @@
   <h1 class="header">AtomBoard</h1>
   <div style="grid-column: span 4;">
     <canvas baseChart width="400" height="400"
-            [datasets]="lineChart"
+            [datasets]="lineChartData"
             [labels]="lineChartLabels"
             [options]="lineChartOptions"
             [legend]="lineChartLegend"
@@ -29,4 +29,6 @@
             [type]="'bar'">
     </canvas>
   </div>
+
+  <app-line-chart></app-line-chart>
 <div>
