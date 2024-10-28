@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { HttpClient } from '@angular/common/http';
-import { Quotation } from './quotation';
 
 @Component({
   selector: 'app-line-chart',
@@ -21,10 +20,7 @@ export class LineChartComponent {
   public lineChartLegend = true;
   public lineChartType = 'line';
 
-  quotations: Quotation[] = [];
-  public lineChartData = [
-    { data: Array<Number>(), label: 'BTS' }
-  ];
+  public lineChartData:number[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -35,25 +31,7 @@ export class LineChartComponent {
       )
       .subscribe({
         next: (data: any) => {
-          this.quotations = data.map(
-            (d: any) =>
-              new Quotation(
-                d[0],
-                d[1],
-                d[2],
-                d[3],
-                d[4],
-                d[5],
-                d[6],
-                d[7],
-                d[8],
-                d[9],
-                d[10]
-              )
-          );
-          this.lineChartData[0].data = this.quotations.map(
-            (q: any) => q.closePrice
-          );
+          this.lineChartData = data.map((d: any) => d[5]);
         },
         error: (err: any) => {
           console.error('Failed to fetch data', err);

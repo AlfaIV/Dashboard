@@ -1,35 +1,6 @@
 <div class="bodyApp">
   <h1 class="header">AtomBoard</h1>
-  <div style="grid-column: span 4;">
-    <canvas baseChart width="400" height="400"
-            [datasets]="lineChartData"
-            [labels]="lineChartLabels"
-            [options]="lineChartOptions"
-            [legend]="lineChartLegend"
-            [type]="'line'">
-    </canvas>
-  </div>
-
-  <div style="grid-column: span 4;">
-    <canvas baseChart width="400" height="400"
-            [datasets]="lineChartData"
-            [labels]="lineChartLabels"
-            [options]="lineChartOptions"
-            [legend]="lineChartLegend"
-            [type]="'doughnut'">
-    </canvas>
-  </div>
-
-  <div style="grid-column: span 4;">
-    <canvas baseChart width="400" height="400"
-            [datasets]="lineChartData"
-            [labels]="lineChartLabels"
-            [options]="lineChartOptions"
-            [legend]="lineChartLegend"
-            [type]="'bar'">
-    </canvas>
-  </div>
-
+  <p>Дашборд криптовалют на основе данных биржы Binance</p>
   <app-line-chart></app-line-chart>
   <app-pie-chart></app-pie-chart>
   <app-bar-chart></app-bar-chart>
