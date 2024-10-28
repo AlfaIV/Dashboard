@@ -7,13 +7,31 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [BaseChartDirective],
   templateUrl: './pie-chart.component.html',
-  styleUrl: './pie-chart.component.scss'
+  styleUrl: './pie-chart.component.scss',
 })
 export class PieChartComponent {
-  public pieChartData = [65,12,1];
-  public pieChartLabels: string[] = ['Red', 'Blue', 'Yellow'];
+  public pieChartData: number[] = [];
+  public pieChartLabels: string[] = [];
   public pieChartOptions = {
     responsive: true,
   };
   public pieChartLegend = true;
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get('https://api.binance.com/api/v3/ticker/price').subscribe({
+      next: (data: any) => {
+        let dataSelection = data
+          .filter((d: any) => d.symbol.includes('USD'))
+          .slice(0, 5);
+
+        this.pieChartData = dataSelection.map((d: any) => d.price);
+        this.pieChartLabels = dataSelection.map((d: any) => d.symbol);
+      },
+      error: (err: any) => {
+        console.error('Failed to fetch data', err);
+      },
+    });
+  }
 }
