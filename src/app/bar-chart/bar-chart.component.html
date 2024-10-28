@@ -1,10 +1,13 @@
 <p>Топ-10 криптовалют по объему сделок за текущие 24 часа</p>
 <div>
-  <canvas baseChart width="400" height="400"
-          [datasets]="[{ data: barChartData, label: 'VolumeBarChart' }]"
-          [labels]="barChartLabels"
-          [options]="barChartOptions"
-          [legend]="barChartLegend"
-          [type]="'bar'">
+  <canvas
+    baseChart
+    class="barChart"
+    [datasets]="[{ data: barChartData, label: 'VolumeBarChart' }]"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+    [type]="'bar'"
+  >
   </canvas>
 </div>
