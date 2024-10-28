@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 import { BaseChartDirective } from 'ng2-charts';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
+
 import { LineChartComponent } from "./line-chart/line-chart.component";
+import { PieChartComponent } from "./pie-chart/pie-chart.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, BaseChartDirective, HttpClientModule, LineChartComponent],
+  imports: [RouterOutlet, BaseChartDirective, HttpClientModule, LineChartComponent, PieChartComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [],
