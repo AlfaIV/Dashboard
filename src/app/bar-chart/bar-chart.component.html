@@ -1,1 +1,10 @@
-<p>Текущий размер сделок основных криптовалют</p>
+<p>Топ-10 криптовалют по объему сделок</p>
+<div>
+  <canvas baseChart width="400" height="400"
+          [datasets]="[{ data: barChartData, label: 'VolumeBarChart' }]"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [type]="'bar'">
+  </canvas>
+</div>
