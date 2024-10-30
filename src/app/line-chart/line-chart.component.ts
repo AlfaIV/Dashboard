@@ -49,4 +49,8 @@ export class LineChartComponent {
     }
     return dates;
   }
+
+  public handleButtonClick(btnName: string) {
+    console.log('Кнопка нажата!', btnName);
+  }
 }

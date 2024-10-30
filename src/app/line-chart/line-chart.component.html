@@ -9,4 +9,5 @@
   [type]="'line'"
 >
 </canvas>
-<app-button></app-button>
+<app-button btnText="Нажми меня" (btnClick)="handleButtonClick($event)"></app-button>
+<app-button btnText="Нажми меня дважды" (btnClick)="handleButtonClick($event)"></app-button>
