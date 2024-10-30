@@ -1,13 +1,15 @@
-<p>График котировок BTS</p>
+<p class="header">График котировок BTS за последние {{this.days}} {{this.interval}}</p>
 <canvas
   baseChart
   class="lineChart"
-  [datasets]="[{ data: lineChartData, label: 'BTSLineChart' }]"
+  [datasets]="[{ data: lineChartData, label: 'BTS' }]"
   [labels]="lineChartLabels"
   [options]="lineChartOptions"
   [legend]="lineChartLegend"
   [type]="'line'"
 >
 </canvas>
-<app-button btnText="Нажми меня" (btnClick)="handleButtonClick($event)"></app-button>
-<app-button btnText="Нажми меня дважды" (btnClick)="handleButtonClick($event)"></app-button>
+<p class="text">Выберите интервал отображения графика котировок</p>
+<app-button class="button" btnText="{{this.days}} минут" (btnClick)="handleButtonClick('minutes')"></app-button>
+<app-button class="button" btnText="{{this.days}} часов" (btnClick)="handleButtonClick('hours')"></app-button>
+<app-button class="button" btnText="{{this.days}} дней" (btnClick)="handleButtonClick('days')"></app-button>

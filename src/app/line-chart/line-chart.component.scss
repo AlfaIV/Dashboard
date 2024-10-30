@@ -1,8 +1,25 @@
-.lineChart{
-  width: 400px;
-  height: 400px;
+:host {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
-p{
+
+.header{
+  grid-column: span 3;
   text-align: center;
   font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.lineChart{
+  grid-column: span 3;
+}
+
+.text{
+  grid-column: span 3;
+  text-align: center;
+  font-size: 20px;
+  font-weight: thinner;
+  color: #656166;
 }
