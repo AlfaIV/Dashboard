@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { HttpClient } from '@angular/common/http';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-line-chart',
   standalone: true,
-  imports: [BaseChartDirective],
+  imports: [BaseChartDirective, ButtonComponent],
   templateUrl: './line-chart.component.html',
   styleUrl: './line-chart.component.scss',
 })

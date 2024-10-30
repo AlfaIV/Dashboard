@@ -8,6 +8,7 @@ import { ChartConfiguration, ChartOptions, ChartType } from 'chart.js';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { ButtonComponent } from './button/button.component';  
 
 @Component({
   selector: 'app-root',
@@ -19,31 +20,13 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
     LineChartComponent,
     PieChartComponent,
     BarChartComponent,
+    ButtonComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers: [],
 })
 export class AppComponent {
-  title = 'RosAtom';
-  public lineChartData = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-  ];
-  public lineChartLabels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-  ];
-  public lineChartOptions = {
-    responsive: true,
-  };
-  public lineChartLegend = true;
-  public lineChartType = 'line';
-
   // public lineChartData2: ChartConfiguration<'line'>['data'] = {
   //   labels: [
   //     'January',
